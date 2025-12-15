@@ -1,0 +1,38 @@
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-principal);
+    text-decoration: none;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Garante que o link herde a cor do texto onde ele está */
+}
+
+a:hover {
+    text-decoration: none; /* Garante que não apareça sublinhado nem ao passar o mouse */
+    /* Se quiser sublinhado no hover, mude para: text-decoration: underline; */
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    padding-top: var(--altura-navbar);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Utilitários / Helpers */
+.text-center { text-align: center; }
+.text-vinho { color: var(--cor-vinho); }
+.text-dourado { color: var(--cor-dourado); }
