@@ -1,0 +1,140 @@
+/* ==========================================================================
+   PÁGINA: PERFIL DO USUÁRIO
+   Arquivo: public/css/pages/perfil.css
+   ========================================================================== */
+
+/* --- Container Principal (Card) --- */
+.profile-container {
+    max-width: 800px;
+    margin: 3rem auto; /* Espaçamento vertical maior */
+    padding: 3rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra mais suave e moderna */
+    color: var(--cor-texto);
+    border-top: 5px solid var(--cor-vinho); /* Detalhe visual no topo */
+}
+
+/* --- Cabeçalho do Perfil --- */
+.profile-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-header h1 {
+    font-family: var(--fonte-principal);
+    color: var(--cor-vinho);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-header p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    font-family: var(--fonte-secundaria);
+}
+
+/* --- Detalhes Gerais --- */
+.profile-details {
+    margin-bottom: 2rem;
+}
+
+/* Estilo para linhas de informação (ex: Email) */
+.profile-info-row {
+    font-size: 1.1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between; /* Separa label do valor */
+    align-items: center;
+}
+
+.profile-info-row strong {
+    color: var(--cor-vinho);
+    font-weight: 600;
+}
+
+/* --- Estilos para os Componentes Injetados (Admin/Profissional) --- */
+/* Essas classes devem ser usadas dentro dos seus componentes x-perfil */
+
+.admin-section h2, 
+.professional-section h2 {
+    color: var(--cor-vinho);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--cor-dourado);
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--fonte-principal);
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+.admin-buttons {
+    display: grid; /* Grid é melhor que flex para botões iguais */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.admin-buttons .btn {
+    background-color: var(--cor-vinho);
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.admin-buttons .btn:hover {
+    background-color: #fff;
+    color: var(--cor-vinho);
+    box-shadow: 0 4px 10px rgba(138, 3, 3, 0.2);
+    transform: translateY(-2px);
+    border: 1px solid var(--cor-vinho); /* Opcional: borda ao passar o mouse */
+}
+
+/* --- Botão de Sair (Logout) --- */
+#logout-button-container {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px dashed #ddd; /* Separação visual */
+}
+
+.btn-logout {
+    background-color: transparent;
+    color: #dc3545; /* Vermelho padrão de erro/perigo */
+    border: 1px solid #dc3545;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+    }
+    .profile-header h1 {
+        font-size: 2rem;
+    }
+    .profile-info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}

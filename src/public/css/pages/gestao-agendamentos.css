@@ -1,0 +1,285 @@
+/* ==========================================================================
+   PÁGINA: GESTÃO DE AGENDAMENTOS
+   Arquivo: public/css/pages/gestao-agendamentos.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ESTRUTURA E CARD PRINCIPAL
+   -------------------------------------------------------------------------- */
+.content-wrapper {
+    background-color: #f4f6f9;
+    min-height: calc(100vh - var(--altura-navbar));
+    padding: 2rem 0;
+}
+
+.management-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid var(--cor-vinho);
+    margin-bottom: 2rem;
+}
+
+/* Título da Página */
+.page-title {
+    font-family: var(--fonte-principal, sans-serif);
+    color: var(--cor-vinho);
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   2. ESTILIZAÇÃO DA TABELA (DataTables)
+   -------------------------------------------------------------------------- */
+table.dataTable {
+    border-collapse: separate !important; /* Necessário para border-radius funcionar */
+    border-spacing: 0;
+    font-family: var(--fonte-secundaria, sans-serif);
+    width: 100% !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Cabeçalho (Thead) */
+table.dataTable thead th {
+    background-color: var(--cor-vinho);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 16px 15px !important;
+    border-bottom: none !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+}
+
+/* Arredondamento dos cantos do cabeçalho */
+table.dataTable thead th:first-child { border-top-left-radius: 8px; }
+table.dataTable thead th:last-child { border-top-right-radius: 8px; }
+
+/* Corpo (Tbody) */
+table.dataTable tbody td {
+    padding: 14px 15px !important;
+    vertical-align: middle;
+    border-bottom: 1px solid #f0f0f0;
+    color: var(--cor-texto, #333);
+    font-size: 0.95rem;
+}
+
+/* Linhas Zebradas (Striped) */
+table.dataTable.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fafafa; /* Cinza muito sutil */
+}
+table.dataTable.table-striped tbody tr:nth-of-type(even) {
+    background-color: #ffffff;
+}
+
+/* Hover na Linha */
+table.dataTable tbody tr:hover {
+    background-color: rgba(197, 161, 55, 0.08) !important; /* Dourado suave (var(--cor-dourado) opaca) */
+    transition: background-color 0.2s ease;
+}
+
+/* Remove a borda da última linha para ficar limpo */
+table.dataTable tbody tr:last-child td {
+    border-bottom: 1px solid transparent;
+}
+
+/* --------------------------------------------------------------------------
+   3. ELEMENTOS INTERNOS DA TABELA (Badges e Botões)
+   -------------------------------------------------------------------------- */
+
+/* Badges de Status (Compatível com Bootstrap e Custom) */
+.badge {
+    font-weight: 600;
+    padding: 0.5em 0.8em;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Botões de Ação (Editar / Cancelar) */
+/* Botões de Ação (Editar / Cancelar) */
+.btn-action {
+    /* Reduz o padding interno para deixar o botão mais compacto */
+    padding: 4px 8px !important;
+    /* Diminui o tamanho da fonte do texto e do ícone */
+    font-size: 0.8rem !important;
+    /* Garante que a altura da linha seja adequada para o novo tamanho de fonte */
+    line-height: 1.2 !important;
+    /* Ajusta a margem direita para afastar os botões */
+    margin-right: 5px;
+    /* Mantém o arredondamento dos cantos */
+    border-radius: 4px;
+    /* Mantém a transição suave e a sombra */
+    transition: all 0.2s ease;
+    border: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Efeito hover para feedback visual */
+.btn-action:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 5px rgba(0,0,0,0.15);
+}
+
+/* Remove a margem direita do último botão para alinhar com a borda da célula */
+.btn-action:last-child {
+    margin-right: 0;
+}
+
+/* Garante que o ícone dentro do botão também diminua de tamanho */
+.btn-action i {
+    font-size: 0.8rem !important;
+    /* Adiciona um pequeno espaçamento entre o ícone e o texto */
+    margin-right: 3px;
+}
+
+/* Ajusta o alinhamento vertical da célula de Ações para que os botões fiquem centralizados */
+table.dataTable tbody td:last-child {
+    vertical-align: middle !important;
+    /* Garante que os botões fiquem um ao lado do outro e não quebrem linha */
+    white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   4. CONTROLES DO DATATABLES (Paginação, Busca, Filtro)
+   -------------------------------------------------------------------------- */
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+    color: var(--cor-texto, #333);
+    font-family: var(--fonte-secundaria, sans-serif);
+    margin-bottom: 10px;
+}
+
+/* Inputs (Search e Select) */
+.dataTables_wrapper .dataTables_filter input,
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px 12px;
+    margin-left: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+    background-color: #fff;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus,
+.dataTables_wrapper .dataTables_length select:focus {
+    border-color: var(--cor-dourado);
+    box-shadow: 0 0 0 2px rgba(197, 161, 55, 0.2);
+}
+
+/* Paginação */
+.dataTables_wrapper .dataTables_paginate {
+    padding-top: 1rem;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border-radius: 6px !important;
+    border: 1px solid transparent !important;
+    padding: 0.4em 0.8em !important;
+    margin-left: 4px !important;
+    font-size: 0.9rem;
+}
+
+/* Botão da página atual */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background: var(--cor-vinho) !important;
+    color: #fff !important;
+    border-color: var(--cor-vinho) !important;
+    font-weight: 600;
+}
+
+/* Hover nos botões de paginação */
+.dataTables_wrapper .dataTables_paginate .paginate_button:not(.current):hover {
+    background: var(--cor-dourado) !important;
+    color: #fff !important;
+    border-color: var(--cor-dourado) !important;
+}
+
+/* Botões desabilitados (Anterior/Próximo) */
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    background: transparent !important;
+    color: #ccc !important;
+    cursor: default;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. MODAL (Para edição de status)
+   -------------------------------------------------------------------------- */
+.modal-content {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    background-color: var(--cor-vinho);
+    color: #fff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom: none;
+}
+
+.modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%); /* Deixa o X branco */
+}
+
+.modal-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #eee;
+}
+
+/* --------------------------------------------------------------------------
+   6. RESPONSIVIDADE
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 1rem 0;
+    }
+
+    .management-card {
+        padding: 1.5rem;
+    }
+
+    .page-title {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Ajuste para cabeçalho da tabela não quebrar layout */
+    table.dataTable thead th {
+        font-size: 0.75rem;
+        padding: 10px !important;
+    }
+
+    table.dataTable tbody td {
+        font-size: 0.85rem;
+        padding: 10px !important;
+    }
+
+    /* Centralizar paginação no mobile */
+    .dataTables_wrapper .dataTables_paginate {
+        text-align: center;
+        margin-top: 10px;
+    }
+}

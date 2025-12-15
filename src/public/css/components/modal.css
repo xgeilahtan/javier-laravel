@@ -1,0 +1,172 @@
+/* ==========================================================================
+   ARQUIVO: public/css/components/modais.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ESTRUTURA GERAL (Serve para Login, Cadastro e Padrão)
+   -------------------------------------------------------------------------- */
+.modal-content {
+    background-color: var(--cor-fundo);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    font-family: var(--fonte-secundaria);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--cor-borda);
+    padding: 1.25rem 1.5rem;
+}
+
+.modal-title {
+    font-family: var(--fonte-principal);
+    color: var(--cor-vinho);
+    font-size: 1.5rem;
+}
+
+.modal-body {
+    padding: 1.5rem; /* Padronizado */
+}
+
+/* --- Botão de Fechar (X) --- */
+.modal-header .btn-close {
+    /* SVG Vinho */
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%238a0303'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+.modal-header .btn-close:hover {
+    /* SVG Dourado ao passar o mouse */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c5a137'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+    transform: scale(1.1);
+}
+
+/* --------------------------------------------------------------------------
+   2. ESTILOS DE FORMULÁRIO DENTRO DO MODAL (Inputs, Labels, Erros)
+   -------------------------------------------------------------------------- */
+.form-label {
+    font-weight: 500;
+    color: var(--cor-texto);
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.input-group {
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease;
+}
+
+.input-group:focus-within {
+    box-shadow: 0 0 0 3px rgba(197, 161, 55, 0.25);
+}
+.input-group:focus-within .input-group-text {
+    color: var(--cor-dourado);
+    border-color: var(--cor-dourado);
+}
+
+.input-group .form-control,
+.input-group .form-select {
+    border: 1px solid var(--cor-borda);
+    border-left: none;
+    box-shadow: none !important;
+}
+
+.input-group-text {
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-right: none;
+    color: var(--cor-vinho);
+    transition: all 0.2s ease;
+}
+
+/* Arredondamento correto dos cantos */
+.input-group > .input-group-text { border-top-left-radius: 8px; border-bottom-left-radius: 8px; }
+.input-group > :not(:first-child) { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+.input-group > :not(:last-child) { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.input-group > .form-control, .input-group > .form-select { flex: 1 1 auto; width: 1%; }
+
+/* --- Botões e Links --- */
+.modal-content .btn-primary {
+    background-color: var(--cor-vinho);
+    border-color: var(--cor-vinho);
+    padding: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.modal-content .btn-primary:hover {
+    background-color: var(--cor-dourado);
+    border-color: var(--cor-dourado);
+}
+
+.modal-content a {
+    color: var(--cor-vinho);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.modal-content a:hover { color: var(--cor-dourado); }
+
+/* --- Erros de Validação --- */
+.is-invalid, .is-invalid:focus {
+    border-color: var(--cor-vinho) !important;
+}
+.input-group:has(.is-invalid) .input-group-text {
+    border-color: var(--cor-vinho) !important;
+    color: var(--cor-vinho) !important;
+}
+.invalid-feedback {
+    color: var(--cor-vinho);
+    font-weight: 500;
+}
+
+/* --- Ícone de Senha --- */
+.toggle-password {
+    cursor: pointer;
+    border-left: 1px solid var(--cor-borda) !important;
+}
+.input-group:has(.is-invalid) .toggle-password {
+    border-left: 1px solid var(--cor-vinho) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. MODAL ESPECÍFICO DE ALERTAS (Sucesso/Erro)
+   -------------------------------------------------------------------------- */
+/* Aqui entra aquele seu código antigo, mas simplificado para usar a base acima */
+
+#alertModal .modal-content {
+    border-width: 2px;
+    border-style: solid;
+    text-align: center;
+}
+
+#alertModal .modal-header { border-bottom: none; }
+
+/* Variação Sucesso */
+.modal-success { border-color: var(--cor-dourado); }
+.modal-success #alertModalIcon { color: var(--cor-dourado); }
+.modal-success #alertModalTitle { color: var(--cor-texto); }
+
+/* Variação Erro */
+.modal-error { border-color: var(--cor-vinho); }
+.modal-error #alertModalIcon { color: var(--cor-vinho); }
+.modal-error #alertModalTitle { color: var(--cor-vinho); }
+
+/* --------------------------------------------------------------------------
+   4. RESPONSIVIDADE
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+    .modal-dialog {
+        max-width: 95%;
+        margin: 1rem auto;
+    }
+    .modal-body { padding: 1rem; }
+    
+    /* Corrige o formulário de registro no mobile */
+    #registerForm .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

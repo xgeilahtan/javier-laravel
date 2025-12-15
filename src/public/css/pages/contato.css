@@ -1,0 +1,95 @@
+/* ==========================================================================
+   PÁGINA: CONTATO / LOCALIZAÇÃO
+   Arquivo: public/css/pages/contato.css
+   ========================================================================== */
+
+/* Fundo da seção (caso não use bg-light do bootstrap, ou para reforçar) */
+.contact-section {
+    background-color: #f8f9fa;
+    position: relative;
+}
+
+/* Título da Seção (Reutilizando padrão, mas garantindo especificidade) */
+.section-title {
+    font-family: var(--fonte-principal);
+    color: var(--cor-vinho);
+    font-size: 2.2rem;
+}
+
+/* --- Card de Informações (Esquerda) --- */
+.contact-card {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    height: 100%; /* Para alinhar altura com o mapa se precisar */
+    border-left: 5px solid var(--cor-vinho); /* Detalhe visual charmoso */
+}
+
+.card-subtitle {
+    font-family: var(--fonte-principal);
+    color: var(--cor-dourado); /* Destaque dourado */
+    font-size: 1.5rem;
+}
+
+/* Lista de Contatos */
+.contact-list {
+    margin-top: 1.5rem;
+    padding-left: 0;
+}
+
+.contact-item {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column; /* No mobile fica um em cima do outro */
+    border-bottom: 1px solid #eee; /* Linha separadora sutil */
+    padding-bottom: 0.8rem;
+}
+
+/* Labels (Ícones + Texto forte) */
+.icon-label {
+    font-weight: bold;
+    color: var(--cor-vinho);
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.contact-value {
+    color: #555;
+    font-size: 1rem;
+}
+
+/* --- Links Específicos --- */
+.address-link {
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.address-link:hover {
+    color: var(--cor-dourado);
+    text-decoration: underline; /* Aqui o sublinhado fica bom para indicar clique */
+}
+
+.whatsapp-link {
+    color: #25D366; /* Cor oficial do Zap */
+    font-weight: 600;
+}
+.whatsapp-link:hover {
+    color: #1DA851;
+}
+
+/* --- Mapa (Direita) --- */
+.map-container iframe {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Garante que o mapa não fique cinza enquanto carrega */
+    background-color: #e0e0e0; 
+}
+
+/* --- Responsividade --- */
+@media (min-width: 768px) {
+    /* Em telas maiores, coloca o label e o valor lado a lado ou ajusta */
+    .contact-card {
+        padding: 3rem;
+    }
+}

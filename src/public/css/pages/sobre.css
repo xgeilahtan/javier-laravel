@@ -1,0 +1,119 @@
+/* ==========================================================================
+   PÁGINA: SOBRE NÓS
+   Arquivo: public/css/pages/sobre.css
+   ========================================================================== */
+
+/* --- Títulos e Tipografia da Página --- */
+.page-title {
+    font-family: var(--fonte-principal);
+    color: var(--cor-vinho);
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Detalhe dourado abaixo do título principal */
+.page-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--cor-dourado);
+    margin: 10px auto 0;
+}
+
+.section-title {
+    font-family: var(--fonte-principal);
+    color: var(--cor-vinho);
+    font-size: 2rem;
+}
+
+.lead-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Seção de História --- */
+.history-text p {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    color: var(--cor-texto);
+    line-height: 1.7;
+    text-align: justify;
+    /* Opcional: deixa o bloco de texto quadrado */
+}
+
+/* Imagem da História com efeito */
+.history-image-container img {
+    border: 4px solid #fff;
+    box-shadow: 0 10px 20px rgba(138, 3, 3, 0.15);
+    /* Sombra suave cor de vinho */
+    transition: transform 0.3s ease;
+}
+
+.history-image-container img:hover {
+    transform: scale(1.02);
+}
+
+/* --- Seção do Espaço (Galeria) --- */
+.space-section {
+    background-color: #f9f9f9;
+    /* Fundo levemente cinza para separar seções */
+}
+
+.gallery-img {
+    width: 100%;
+    max-width: 300px;
+    /* Match team card size */
+    height: 400px;
+    /* Match team card aspect ratio roughly (300 * 4/3 = 400) */
+    object-fit: cover;
+    /* Corta a imagem para caber sem esticar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid var(--cor-dourado);
+}
+
+/* --- Seção da Equipe (Ajustes Específicos) --- */
+.staff-intro {
+    max-width: 700px;
+    color: #666;
+    font-size: 1.05rem;
+}
+
+/* NOTA: O .staff-grid e os cards já foram definidos no 
+   arquivo css/components/cards.css que criamos anteriormente.
+   Aqui só adicionamos espaçamentos se necessário.
+*/
+
+/* --- Responsividade Específica desta Página --- */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .history-text {
+        margin-top: 2rem;
+        padding-left: 0 !important;
+        /* Remove o padding left do desktop */
+    }
+
+    .gallery-img {
+        height: 200px;
+        /* Menor no mobile */
+    }
+}

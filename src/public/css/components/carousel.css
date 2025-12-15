@@ -1,0 +1,12 @@
+#carouselExampleIndicators {
+    width: 70%; margin: 0 auto;
+    align-items: center; justify-content: center;
+}
+.carousel-item img{ width: 100%; height: auto; }
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 1rem; border-radius: 5px;
+}
+.carousel-caption h5 { color: #DCDCDC; font-size: 1.5rem; }
+.carousel-caption p { color: #DCDCDC; font-size: 1rem; }
